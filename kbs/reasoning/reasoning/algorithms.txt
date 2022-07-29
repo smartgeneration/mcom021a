@@ -1,0 +1,42 @@
+forward-reasoning:
+input: none
+------------------
+leaf_nodes = get leaf nodes
+all_rules = get all rules from G
+base_rule_keys = get keys of rules whose premises are leaf nodes
+evaluate rules based on base_rule_keys
+not_evaluated_rule_keys = all_rules.keys() - base_rule_keys
+while not_evaluated_rule_keys not empty:
+    for key in not_evaluated_rule_keys.copy():
+        rule = all_rules[key]
+        if premises of rule are evaluated:
+            evaluate rule
+            not_evaluated_rule_keys.remove(key)
+conclusion_nodes = get conclusion nodes
+for node in conclusion_nodes:
+    show conclusion of node
+-----------------------------------------------------------------
+backward-reasoning:
+input: chosen_id
+------------------
+# backward
+stack = []
+queue = [chosen_id]
+id_set = {chosen_id}
+while queue is not empty:
+    id = queue.dequeue()
+    predecessors = G.predecessors(id)
+    queue.enqueu(predecessors not in id_set)
+    id_set.add(predecessors)
+    rule_keys = get keys of rules from predecessors to id
+    stack.push(rule_keys)
+# forward
+while stack is not empty:
+    rule_key = stack.pop()
+    evaluate_rule(rule_key)
+# Conclusion
+show conclusion of G.nodes[chosen_id]
+
+
+
+

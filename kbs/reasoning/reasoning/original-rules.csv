@@ -1,0 +1,6 @@
+#maluat,vetrai,vephai
+1,A,B
+2,B^C,D
+3,B^~C,E
+4,~A^~F^G,H
+5,~A^I,J

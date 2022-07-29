@@ -1,0 +1,11 @@
+#id,description,type,question,true_conclusion,false_conclusion
+A,Khởi động được,1,Máy khởi động được không?
+B,Hoạt động bình thường,2
+C,In được,1,Máy in được không?
+D,Không hỏng,3,,Máy không hỏng,Máy hỏng rồi
+E,Hỏng phần in,3,,Máy hỏng phần in,Máy không hỏng phần in
+F,Có thông báo,1,Máy có hiện thông báo gì không?
+G,Có âm thanh,1,Máy có phát âm thanh không?
+H,Hỏng RAM,3,,Máy hỏng RAM,Máy không hỏng RAM
+I,Có thông báo đĩa,1,Máy có thông báo liên quan đến đĩa không?
+J,Hỏng đĩa,3,,Máy hỏng đĩa,Máy không hỏng đĩa

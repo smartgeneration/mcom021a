@@ -1,0 +1,15 @@
+#1,A,B
+A,r1;1;,B
+#2,B^C,D
+B,r2;1;,D
+C,r2;2;a,D
+#3,B^~C,E
+B,r3;1;,E
+C,r3;2;an,E
+#4,~A^~F^G,H
+A,r4;1;n,H
+F,r4;2;an,H
+G,r4;3;a,H
+#5,~A^I,J
+A,r5;1;n,J
+I,r5;2;a,J
