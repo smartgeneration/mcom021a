@@ -18,7 +18,7 @@ room_temperature['hot'] = fuzz.trimf(temperature.universe, [24, 28, 32])
 room_temperature['very-hot'] = fuzz.trimf(temperature.universe, [28, 32, 36])
 # print("room_temperature", room_temperature.universe)
 
-# 5 tap mo cho bien ngon ngu nhiet do phong target
+# 5 tap mo cho bien ngon ngu nhiet do phong muc tieu
 temperature['very-cold'] = fuzz.trimf(temperature.universe, [0, 0, 20])
 temperature['cold'] = fuzz.trimf(temperature.universe, [16, 20, 24])
 temperature['warm'] = fuzz.trimf(temperature.universe, [20, 24, 28])
@@ -141,7 +141,7 @@ def get_fan_speed_control_rules(): # Cac luat mo bieu dien toc do quat
 
     return [
         rule1a, rule1b, rule1c, rule1d,
-        rule2a, rule2a, rule2b, rule2d,
+        rule2a, rule2b, rule2c, rule2d,
         rule3a, rule3b, rule3c, rule3d,
         rule4a, rule4b, rule4c, rule4d,
         rule5a, rule5b, rule5c, rule5d
@@ -236,7 +236,7 @@ def get_compressor_speed_control_rules(): # Cac luat mo bieu dien toc do may né
 
     return [
         rule1a, rule1b, rule1c, rule1d,
-        rule2a, rule2a, rule2b, rule2d,
+        rule2a, rule2b, rule2c, rule2d,
         rule3a, rule3b, rule3c, rule3d,
         rule4a, rule4b, rule4c, rule4d,
         rule5a, rule5b, rule5c, rule5d
@@ -247,20 +247,20 @@ ac_ctrl = ctrl.ControlSystem(
     get_fan_speed_control_rules() + get_compressor_speed_control_rules()
 )
 
-room_temperature.view()
+#room_temperature.view()
 in_rt = input("Enter room temperature:")
 
-temperature.view()
+#temperature.view()
 in_tt = input("Enter target temperature:")
 
-humidity.view()
+#humidity.view()
 in_hd = input("Enter humidity:")
 
 # oxygen_level.view()
 # in_ol = input("Enter oxygen level:")
 
 fan_speed.view()
-compressor_speed.view()
+#compressor_speed.view()
 
 input('Press Enter For Processing Rules')
 speed = ctrl.ControlSystemSimulation(ac_ctrl)
@@ -271,10 +271,10 @@ speed.compute()
 
 input('Press Enter to View Fan Speed')
 print("Fan Speed", f"{speed.output['fan_speed']} RPM")
-fan_speed.view(sim=speed)
+#fan_speed.view(sim=speed)
 
 input('Press Enter to View Compressor Speed')
 print("Compressor Speed", f"{speed.output['compressor_speed']} RPM")
-compressor_speed.view(sim=speed)
+#compressor_speed.view(sim=speed)
 
 input('Press any key to exit!')
